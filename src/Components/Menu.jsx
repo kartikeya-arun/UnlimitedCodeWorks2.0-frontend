@@ -35,7 +35,7 @@ export default function Menu({ items, setMenuItems, showPost, closePost, setPost
     const getProjects=async()=>{
         try {
             setMenuItems(['Loading...'])
-            const response = await fetch('http://localhost:8081/projects');
+            const response = await fetch('https://unlimited-code-works-2-0.vercel.app/projects');
             
             if (!response.ok) {
               throw new Error(`HTTP error! status: ${response.status}`);
