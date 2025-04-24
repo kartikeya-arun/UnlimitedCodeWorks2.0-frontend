@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react"
 import { ABOUT, BLOG_MENU, LINKS } from "../constants/text.constants"
 
-export default function Menu({ items, setMenuItems, showPost, closePost, setPost}) {
+export default function Menu({ items, setMenuItems, showPost, closePost, setPost, setTerminal}) {
     const [highlight, setHighlight] = useState(0)
     const divRef=useRef(null)
     const [history,setHistory]=useState([])
@@ -26,7 +26,7 @@ export default function Menu({ items, setMenuItems, showPost, closePost, setPost
                 newIp.shift()
             }
             if(JSON.stringify(newIp)===JSON.stringify(konamiCode)){
-                alert('Konami Code entered!')
+                setTerminal(false)
             }
             return newIp
         })
